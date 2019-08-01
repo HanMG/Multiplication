@@ -1,5 +1,5 @@
 /*
-  	구구단 연습 v3 값 입력 및 조건문
+  	구구단 연습 v3 값 입력 및 조건문 if
  */
 
 import java.util.Scanner;
