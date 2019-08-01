@@ -1,54 +1,44 @@
 /*
-  	구구단 연습 v4 값 입력 및 조건문 에러시 다시 값을 입력받게 변화
+  	구구단 연습 v5 배열이용
  */
 
 import java.util.Scanner;
-public class multi {
+public class multi 
+{
 
-	public static void main(String[] args) {
+	public static void main(String[] args) 
+	{
 		// TODO Auto-generated method stub
-		Scanner scan = new Scanner(System.in);
-		int input = 0; // 입력받을 압자리
-		int b = 0; // 뒷자리				
-	
-		/*
-		while(true){
-			System.out.print("Enter the number ");
-			input = scan.nextInt();
-			if(input<1) {
-				System.out.println("1 이상의 값을 입력하세요.");				
+		Scanner scan = new Scanner(System.in);		
+		int[] result = new int[9];		// 값을 담을 배열생성
+		int i = 0;
+		for(;;)			
+		{
+			System.out.printf("Enter Number: ");
+			int input = scan.nextInt();
+			
+			if(input<1)
+			{
+				System.out.println("1 이상의 값을 입력해주세요!!");
 			}
-			else if(input>9) {
-				System.out.println("9 이하의 값을 입력하세요.");
+			else if(input>9)
+			{
+				System.out.println("10 미만의 값을 입력해주세요!!");
 			}
-			else {
-				for(b=1; b<10; b++) 
+			else
+			{
+				for(i=0; i < result.length; i++) 
 				{
-					System.out.println(input+" * "+b+" = "+input*b); 
+					result[i] = input * (i+1); 
 				}
+				
+				for(i=0; i< result.length; i++)
+				{
+					System.out.println(input +" * "+(i+1)+" = "+result[i]);
+				}				
 				break;
 			}			
-		}
-		*/
-		
-		for(;;) {
-			System.out.print("Enter the number ");
-			input = scan.nextInt();
-			if(input<1) {
-				System.out.println("1 이상의 값을 입력하세요.");				
-			}
-			else if(input>9) {
-				System.out.println("9 이하의 값을 입력하세요.");
-			}
-			else {
-				for(b=1; b<10; b++) 
-				{
-					System.out.println(input+" * "+b+" = "+input*b); 
-				}
-				break;
-			}
-		}			
-		
+		}		
 	}
 
 }
