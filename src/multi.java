@@ -1,16 +1,29 @@
 /*
-  	구구단 연습 v5 배열이용
+  	구구단 연습 v6 메서드 이용
  */
 
 import java.util.Scanner;
+
 public class multi 
 {
+	public static int[] calculate(int times) {
+		int[] result = new int[9];
+		for(int i=0; i < result.length; i++) {
+			result[i] = times * (i+1);
+		}
+		return result;
+	}
+	
+	public static void print(int[] result, int input) {
+		for(int i=0; i < result.length; i++) {
+			System.out.println(input+" * "+(i+1)+" = "+ result[i]);
+		}
+	}
 
 	public static void main(String[] args) 
 	{
 		// TODO Auto-generated method stub
-		Scanner scan = new Scanner(System.in);		
-		int[] result = new int[9];		// 값을 담을 배열생성
+		Scanner scan = new Scanner(System.in);			
 		int i = 0;
 		for(;;)			
 		{
@@ -27,15 +40,8 @@ public class multi
 			}
 			else
 			{
-				for(i=0; i < result.length; i++) 
-				{
-					result[i] = input * (i+1); 
-				}
-				
-				for(i=0; i< result.length; i++)
-				{
-					System.out.println(input +" * "+(i+1)+" = "+result[i]);
-				}				
+				int[] result = calculate(input);
+				print(result,input);
 				break;
 			}			
 		}		
